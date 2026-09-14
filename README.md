@@ -8,4 +8,4 @@ Local repo name: `csx4107-w13-password-change`
 
 Source code repository: not assigned yet
 
-Link to hosted site: (not required to be hosted)  
+Link to hosted site: (not required to be hosted)
