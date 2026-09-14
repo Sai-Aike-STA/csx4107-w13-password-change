@@ -9,3 +9,9 @@ Local repo name: `csx4107-w13-password-change`
 Source code repository: not assigned yet
 
 Link to hosted site: (not required to be hosted)
+
+## Assignment instructions
+
+The asm instructions from MS Teams and the OneNote
+are in
+[`instructions/assignment-instructions.md`](instructions/assignment-instructions.md).
