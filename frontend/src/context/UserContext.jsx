@@ -1,6 +1,7 @@
 import { createContext, useEffect, useRef, useState } from "react";
 
-const API_URL = import.meta.env.VITE_API_URL;
+// when VITE_API_URL is not set the app calls the API on its own domain with a relative path
+const API_URL = import.meta.env.VITE_API_URL ?? "";
 
 export const UserContext = createContext();
 

@@ -14,7 +14,8 @@ import InputLabel from "@mui/material/InputLabel";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-const API_URL = import.meta.env.VITE_API_URL;
+// when VITE_API_URL is not set the app calls the API on its own domain with a relative path
+const API_URL = import.meta.env.VITE_API_URL ?? "";
 
 export default function Item() {
 

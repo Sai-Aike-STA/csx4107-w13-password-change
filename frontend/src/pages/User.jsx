@@ -10,7 +10,8 @@ import IconButton from "@mui/material/IconButton";
 import KeyIcon from "@mui/icons-material/Key";
 import { DataGrid } from "@mui/x-data-grid";
 
-const API_URL = import.meta.env.VITE_API_URL;
+// when VITE_API_URL is not set the app calls the API on its own domain with a relative path
+const API_URL = import.meta.env.VITE_API_URL ?? "";
 
 export default function User() {
 

@@ -8,7 +8,8 @@ import Box from "@mui/material/Box";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../context/UserContext.jsx";
 
-const API_URL = import.meta.env.VITE_API_URL;
+// when VITE_API_URL is not set the app calls the API on its own domain with a relative path
+const API_URL = import.meta.env.VITE_API_URL ?? "";
 
 export default function Home() {
 
