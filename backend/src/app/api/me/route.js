@@ -14,8 +14,18 @@ export function GET(request) {
 
   if (!user) {return errorResponse("Unauthorized Request", 401)}
 
-  return NextResponse.json(user, {
-    status: 201,
-    headers: corsHeaders,
-  })
+  // the token stores the id as "id" while the frontend reads "_id"
+  return NextResponse.json(
+    {
+      user: {
+        _id: user.id,
+        email: user.email,
+        username: user.username,
+      },
+    },
+    {
+      status: 201,
+      headers: corsHeaders,
+    },
+  )
 }

@@ -1,5 +1,6 @@
 // src/app/api/item/route.js
 
+import { recordAuditLog } from "../../lib/audit.js";
 import { getClientPromise } from "../../lib/mongodb.js";
 import { errorResponse, printExceptionLog, successResponse } from "../../lib/utils";
 
@@ -38,6 +39,8 @@ export async function POST(request) {
       amount: amount,
       status: status
     });
+
+    await recordAuditLog(client, "CREATE", insertResult.insertedId, request, name);
 
     return successResponse(
       {

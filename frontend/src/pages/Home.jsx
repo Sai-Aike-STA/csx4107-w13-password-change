@@ -38,6 +38,16 @@ export default function Home() {
             Item
           </Button>
 
+          {/* only the admin user has the id "-1" so the User menu is hidden for normal users */}
+          {user && user._id == "-1" && (
+            <Button
+              color="inherit"
+              onClick={() => { navigate("/user") }}
+            >
+              User
+            </Button>
+          )}
+
           <Button
             color="inherit"
             onClick={async () => {

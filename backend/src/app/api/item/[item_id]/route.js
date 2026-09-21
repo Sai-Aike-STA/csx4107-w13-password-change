@@ -1,5 +1,6 @@
 // src/app/api/item/[item_id]/route.js
 
+import { recordAuditLog } from "@/app/lib/audit";
 import { getClientPromise } from "@/app/lib/mongodb";
 import { errorResponse, printExceptionLog, successResponse } from "@/app/lib/utils";
 import { ObjectId } from "mongodb";
@@ -53,6 +54,8 @@ export async function DELETE(request, { params }) {
       const updatedResult = await db.collection("item")
         .updateOne({ _id: new ObjectId(item_id) }, { $set: newItem });
 
+      await recordAuditLog(client, "DELETE", item_id, request, storedItem.name);
+
       return successResponse({ message: "Delete Success" }, 201);
     }
 
@@ -92,8 +95,10 @@ export async function PUT(request, { params }) {
       console.log("==>update result: ", updatedResult);
       const updateOk = Number(updatedResult.modifiedCount) > 0;
 
-      if (updateOk)
+      if (updateOk) {
+        await recordAuditLog(client, "UPDATE", item_id, request, data.name);
         return successResponse({ message: "Item update success" }, 201);
+      }
       else return errorResponse({ message: "Item update failed" }, 400);
     }
 

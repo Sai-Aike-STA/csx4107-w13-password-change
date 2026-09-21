@@ -22,7 +22,7 @@ export async function POST(request) {
   if (!email || !password) return errorResponse("Missing email or password", 400)
 
   const admin = checkAdmin(email, password)
-  const user = admin ? "admin" : await checkUser(email, password)
+  const user = admin ? admin : await checkUser(email, password)
 
   if (user) {
     const jwtToken = getJwtToken(user)

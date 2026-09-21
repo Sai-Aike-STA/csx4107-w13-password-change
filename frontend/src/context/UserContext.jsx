@@ -46,9 +46,8 @@ export function UserProvider({ children }) {
     });
 
     if (result.ok) {
-      const data = await result.json();
-      setUser(data.user);
-      setIsLoggedIn(true);
+      // the login response has no user data so ask /api/me for it
+      await me();
       return true;
     }
 
