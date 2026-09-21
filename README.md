@@ -6,12 +6,17 @@ Alternate assignment name: **User Management**
 
 Local repo name: `csx4107-w13-password-change`
 
-Source code repository: not assigned yet
+Source code repository: https://github.com/Sai-Aike-STA/csx4107-w13-password-change
 
-Link to hosted site: (not required to be hosted)
+Link to hosted site: https://csx4107-w13-password-change.vercel.app
 
 ## Assignment instructions
 
 The asm instructions from MS Teams and the OneNote
 are in
 [`instructions/assignment-instructions.md`](instructions/assignment-instructions.md).
+
+## Submission screenshots
+
+The submission screenshots are in
+[`instructions/submission/`](instructions/submission/).
